@@ -29,7 +29,7 @@
         <developerConnection>scm:git:git@github.com:deeplearning4j/ScalNet.git</developerConnection>
     </scm>
 
-    <distributionManagement>
+<!--    <distributionManagement>
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
             <name>Sonatype Nexus snapshot repository</name>
@@ -40,7 +40,7 @@
             <name>Nexus Release Repository</name>
             <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-    </distributionManagement>
+    </distributionManagement>-->
 
     <properties>
         <!-- base versions -->
@@ -140,7 +140,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+         <!--   <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.2</version>
                 <configuration>
@@ -164,10 +164,10 @@
                 <configuration>
                     <serverId>sonatype-nexus-snapshots</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <!--<skipStagingRepositoryClose>true</skipStagingRepositoryClose>-->
-                    <!--<stagingProfileId>13036484d8827</stagingProfileId>-->
+                    &lt;!&ndash;<skipStagingRepositoryClose>true</skipStagingRepositoryClose>&ndash;&gt;
+                    &lt;!&ndash;<stagingProfileId>13036484d8827</stagingProfileId>&ndash;&gt;
                 </configuration>
-            </plugin>
+            </plugin>-->
 
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
@@ -330,17 +330,6 @@
                     <value>jfrog</value>
                 </property>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <version>2.8.2</version>
-                        <configuration>
-                            <skip>false</skip>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
             <distributionManagement>
                 <snapshotRepository>
                     <id>local-jfrog</id>
@@ -364,17 +353,6 @@
                     <value>bintray</value>
                 </property>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <version>2.8.2</version>
-                        <configuration>
-                            <skip>false</skip>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
             <distributionManagement>
                 <snapshotRepository>
                     <id>bintray-deeplearning4j-maven</id>
