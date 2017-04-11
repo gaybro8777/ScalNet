@@ -2,10 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.deeplearning4j</groupId>
-    <artifactId>scalnet_2.11</artifactId>
+    <artifactId>ScalNet</artifactId>
+    <packaging>pom</packaging>
     <version>0.8.1-SNAPSHOT</version>
     <modules>
         <module>scalnet_2.10</module>
+        <module>scalnet_2.11</module>
     </modules>
 
     <name>ScalNet</name>
