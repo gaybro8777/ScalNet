@@ -21,9 +21,10 @@
 
 set -e
 
-VALID_VERSIONS=( 2.10 2.11 )
+VALID_VERSIONS=( 2.10 2.11 2.12 )
 SCALA_210_VERSION=$(grep -F -m 1 'scala210.version' pom.xml); SCALA_210_VERSION="${SCALA_210_VERSION#*>}"; SCALA_210_VERSION="${SCALA_210_VERSION%<*}";
 SCALA_211_VERSION=$(grep -F -m 1 'scala211.version' pom.xml); SCALA_211_VERSION="${SCALA_211_VERSION#*>}"; SCALA_211_VERSION="${SCALA_211_VERSION%<*}";
+SCALA_212_VERSION=$(grep -F -m 1 'scala212.version' pom.xml); SCALA_212_VERSION="${SCALA_212_VERSION#*>}"; SCALA_212_VERSION="${SCALA_212_VERSION%<*}";
 
 usage() {
   echo "Usage: $(basename $0) [-h|--help] <scala version to be used>
@@ -54,6 +55,11 @@ if [ $TO_VERSION = "2.11" ]; then
   TO_BINARY="_2\.11"
   FROM_VERSION=$SCALA_210_VERSION
   TO_VERSION=$SCALA_211_VERSION
+elif [ $TO_VERSION = "2.12" ]; then
+  FROM_BINARY="_2\.11"
+  TO_BINARY="_2\.12"
+  FROM_VERSION=$SCALA_211_VERSION
+  TO_VERSION=$SCALA_212_VERSION
 else
   FROM_BINARY="_2\.11"
   TO_BINARY="_2\.10"
