@@ -58,9 +58,6 @@ TO_VERSION=$(echo $TO_VERSION | perl -pe 's/.*?([0-9]+\.[0-9]+\.[0-9]+).*/\1/g')
 FROM_BINARY=_$FROM_BINARY
 TO_BINARY=_$TO_BINARY
 
-echo "$FROM_BINARY"
-echo "$TO_BINARY"
-
 sed_i() {
   sed -e "$1" "$2" > "$2.tmp" && mv "$2.tmp" "$2"
 }
