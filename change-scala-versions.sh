@@ -47,10 +47,10 @@ check_scala_version() {
 check_scala_version "$TO_BINARY"
 
 FROM_BINARY=$(awk -F '[<>]' '/artifactId/{print $3}' pom.xml | grep scalnet | cut -d '_' -f 2)
-FROM_BINARY_VERSION=scala$(echo "$FROM_BINARY" | sed 's/\.//g').version
+FROM_BINARY_VERSION=scala${FROM_BINARY//.}.version
 FROM_VERSION=$(grep -F -m 1 "$FROM_BINARY_VERSION" pom.xml); FROM_VERSION="${FROM_VERSION#*>}"; FROM_VERSION="${FROM_VERSION%<*}";
 
-TO_BINARY_VERSION=scala$(echo "$TO_BINARY" | sed 's/\.//g').version
+TO_BINARY_VERSION=scala${TO_BINARY//.}.version
 TO_VERSION=$(grep -F -m 1 "$TO_BINARY_VERSION" pom.xml); TO_VERSION="${TO_VERSION#*>}"; TO_VERSION="${TO_VERSION%<*}";
 
 FROM_BINARY=_$FROM_BINARY
