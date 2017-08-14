@@ -46,7 +46,7 @@ check_scala_version() {
 
 check_scala_version "$TO_BINARY"
 
-FROM_BINARY=$(awk -F '[<>]' '/artifactId/{print $3}' pom.xml | grep scalnet | cut -d '_' -f 2)
+FROM_BINARY=$(awk -F '[<>]' '/artifactId.*?scalnet_[0-9\.]+/{sub("scalnet_", ""); print $3}' pom.xml)
 FROM_BINARY_VERSION=scala${FROM_BINARY//.}.version
 FROM_VERSION=$(grep -F -m 1 "$FROM_BINARY_VERSION" pom.xml); FROM_VERSION="${FROM_VERSION#*>}"; FROM_VERSION="${FROM_VERSION%<*}";
 FROM_VERSION=$(echo $FROM_VERSION | perl -pe 's/.*?([0-9]+\.[0-9]+\.[0-9]+).*/\1/g')
