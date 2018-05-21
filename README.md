@@ -1,5 +1,5 @@
 # IMPORTANT: THIS REPOSITORY HAS BEEN ARCHIVED AND SCALNET HAS BEEN MOVED
-DataVec has been migrated to a sub-module of the mono-repository here: https://github.com/deeplearning4j/deeplearning4j
+ScalNet has been migrated to a sub-module of the mono-repository here: https://github.com/deeplearning4j/deeplearning4j
 
 All future development will continue at that repository, which should be used for all issues and pull requests.
 
